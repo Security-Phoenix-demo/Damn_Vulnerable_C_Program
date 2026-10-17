@@ -1,8 +1,13 @@
-**my youtube channel:** https://www.youtube.com/user/MrHardik05/featured?view_as=subscriber
+Note: file name has been changed from imgRead.c to dvcp.c, if you are watching videos, you will see imgRead.c but in github repo you will see dvcp.c, please use correct filename.
+
+# Damn Vulnerable C Program(DVCP)             
+[![Twitter Follow](https://img.shields.io/twitter/follow/hardik05?style=social)](https://twitter.com/hardik05)
+
+**My YouTube Channel:** https://www.youtube.com/user/MrHardik05/featured?view_as=subscriber
 
 **What it is?**
 
-This is a simple C program, i coded to explain common types of vulnerabilities like:
+This is a simple C program which I have coded to explain common types of vulnerabilities like:
 1. integer overflow
 2. integer underflow
 3. Out of bound Read
@@ -13,11 +18,11 @@ This is a simple C program, i coded to explain common types of vulnerabilities l
 8. Stack exhaustion
 9. Heap exhastion
 
-This C program contains vulenrable code of all of the above vulnerabilities and then users can fuzz it using AFL or hongfuzz or anything else they want. 
+This C program contains vulenrable code of all of the above vulnerabilities and you can fuzz it using any fuzzer like AFL, libafl, libfuzzer, hongfuzz, winafl, jackalope or any other fuzzer which you want. 
 
-**How to Compile **
+**How to Compile**
 
-just type "make" on the command prompt. Makefile is included with it.
+Just type "make" on the command prompt. Makefile is included with it.
 
 **How to generate input for AFL?**
 
@@ -31,36 +36,36 @@ AFL will automatically generate new test cases and discover most of the vulnerab
 
 **1. First compile this program using following command:**
 
-`afl-gcc -g -fsanitize=address imgRead.c -o imgread`
+`afl-gcc -g -fsanitize=address dvcp.c -o dvcp`
 
 **2. run this command:** 
 
-`afl-fuzz -i input -o output -m none -- ./imgRead @@`
+`afl-fuzz -i input -o output -m none -- ./dvcp @@`
 
 **How to fuzz it using honggfuzz**
 
 **1. First compile this program using following command:**
 
-`hfuzz-gcc -g -fsanitize=address imgRead.c -o imgread`
+`hfuzz-gcc -g -fsanitize=address dvcp.c -o dvcp`
 
 **2. run this command:** 
 
-`hongfuzz -i input -- ./imgread ___FILE___`
+`hongfuzz -i input -- ./dvcp ___FILE___`
 
  **How to fuzz using libfuzzer**
  
-You need to modify the C code, you can get the updated code from here: https://github.com/hardik05/Damn_Vulnerable_C_Program/blob/master/imgRead_libfuzzer.c
+You need to modify the C code, you can get the updated code from here: https://github.com/hardik05/Damn_Vulnerable_C_Program/blob/master/dvcp_libfuzzer.c
 
 **1. Compile the program using following command:**
 
-`clang -fsanitize=fuzzer,address,undefined -g imgRead_libfuzzer.c -o imgRead_libfuzzer`
+`clang -fsanitize=fuzzer,address,undefined -g dvcp_libfuzzer.c -o dvcp_libfuzzer`
 
-**2. run this command to fuzz:
+**2. run this command to fuzz:**
 
-`./imgRead_libfuzzer`
+`./dvcp_libfuzzer`
 
 
-you can see the video tutorials here:
+You can see the video tutorials here:
 
 **Complete Fuzzing Playlist:**
 
@@ -69,6 +74,17 @@ https://www.youtube.com/watch?v=r7ucv2kN4j4&list=PLHGgqcJIME5kYhOSdJjvtVS4b4_OXD
 individual videos below:
 
 **Linux**
+
+**LibAFL**
+
+**[Fuzzing with libAFL]How to install libAFL on system and what are the different components?** -> https://www.youtube.com/watch?v=ztGfxbvcrms
+
+**[Fuzzing with libAFL]libAFL ForkSever Introduction, Running libAFL forkserver fuzzer.** -> https://www.youtube.com/watch?v=Ed1anYoGTyA
+
+**[Fuzzing with libAFL]Fuzzing Damn Vulnerable C Program with libAFL forkserver fuzzer** -> https://www.youtube.com/watch?v=ad_4zroiS_g
+
+**[Fuzzing with libAFL] Using shared memory mode with libAFL forkserver fuzzer** -> https://www.youtube.com/watch?v=GXD_qkISyfY
+
 
 **AFL++**
 
@@ -100,6 +116,8 @@ individual videos below:
 
 **[Fuzzing with libfuzzer,AFL] How to fuzz libfuzzer harness program using AFL** -> https://www.youtube.com/watch?v=HfEqm3TrfwM&list=PLHGgqcJIME5m7HaHfACayoyN0TRe2PHRp&index=2
 
+**How to replicate OpenSSL vulnerabilities CVE-2022-3602 and CVE-2022-3786 and use libfuzzer** -> https://www.youtube.com/watch?v=vhTuXph1dtY
+
 **Radamsa**
 
 **[Fuzzing with Radamsa] Fuzzing a simple C program with Radamsa** -> https://youtu.be/1FRsXVNpynQ
@@ -122,12 +140,15 @@ yep, you can try this -> https://github.com/hardik05/winafl-powermopt
 
 more will be uploaded as i create them.
 
+**OSS-Fuzz from google**
+
+**How OSS-Fuzz Works: A Guide to Fuzz Testing for Open Source Projects** -> https://www.youtube.com/watch?v=OBxCDsJ-0aM
 
 **Why you created this?**
 
 It takes lot of time for new comers and even experianced people to understand different types of vulnerabilities. i have faced this problem myself and decided to share what i learned.
 
-If you learn something from it, send me a thnak you note. thats all i need.
+If you learn something from it, send me a thnak you note. thats all i need. Also if you want to improve of fix something then PR are welcomed!
 
 **Author?**
 
@@ -135,9 +156,14 @@ If you learn something from it, send me a thnak you note. thats all i need.
 
 **Email:** DM me on twitter :)
 
-**web:** http://hardik05.wordpress.com
+**Web:** http://hardik05.wordpress.com
 
 **Feedback?**
 
-suggestions and comments are always welcomed. if you find any issue or have a fix or a new feature send pull request.
+Suggestions and comments are always welcomed. if you find any issue or have a fix or a new feature send pull request.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=hardik05/Damn_Vulnerable_C_Program&type=Date)](https://star-history.com/#hardik05/Damn_Vulnerable_C_Program&Date)
+
 
